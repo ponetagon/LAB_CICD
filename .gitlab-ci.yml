@@ -1,0 +1,34 @@
+stages:
+  - docker
+  - kubernest
+  - deploy
+
+docker:
+  stage: docker
+  script:
+     - docker build -t nginx-fluke .
+     - docker images list
+     - docker tag nginx-fluke registry-fluke.ols-cicd.dedyn.io/root/cicd101/nginx-fluke:v2
+     - docker login registry-fluke.ols-cicd.dedyn.io -u $registry_user -p $registry_pass 
+     - docker push registry-fluke.ols-cicd.dedyn.io/root/cicd101/nginx-fluke:v2
+     - docker logout
+     - echo 'Update & Logout Docker Sucess..!!'
+
+kubernest:
+  stage: kubernest
+  script:
+     - export KUBECONFIG=config.cfg
+     - kubectl get node
+     - echo 'Kubectl config Apply...!!'
+
+deploy:
+  stage: deploy
+  script:  
+    - export KUBECONFIG=config.cfg
+    #- kubectl create secret docker-registry registry --docker-server=registry-fluke.ols-cicd.dedyn.io --docker-username=$registry_user --docker-password=$registry_pass -n fluke
+    - kubectl apply -f nginx.yml
+    - kubectl version
+    - echo 'Deploy Nginx Sucess...!!'
+
+
+
