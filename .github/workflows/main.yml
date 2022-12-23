@@ -21,4 +21,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ steps.vars.outputs.tag }} 
+        tags: ponetagon/myapp:${{ steps.vars.outputs.tag }} 
