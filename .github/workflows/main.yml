@@ -17,8 +17,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
     - name: Build and push
       id: docker_build
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v3
       with:
-        context: .
         push: true
-        tags: ponetagon/myapp:${{ steps.vars.outputs.tag }} 
+        tags: ponetagon/myapp:v1
