@@ -9,7 +9,7 @@ on:
 jobs:
   Build:
     environment: Dockerhub
-    env:
+#    env:
 #      user: ${{ secrets.DOCKERHUB_USERNAME }}
 #      pass: ${{ secrets.DOCKERHUB_PASSWORD }}
     runs-on: ubuntu-latest
