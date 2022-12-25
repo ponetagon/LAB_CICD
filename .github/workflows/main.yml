@@ -25,4 +25,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/myapp1:{{ steps.vars.outputs.tag }},${{ secrets.DOCKERHUB_USERNAME }}/myapp1:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/myapp1:{{ steps.vars.outputs.tag }} , ${{ secrets.DOCKERHUB_USERNAME }}/myapp1:latest
