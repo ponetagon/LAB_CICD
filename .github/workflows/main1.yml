@@ -12,8 +12,8 @@ jobs:
     environment: Dockerhub
     runs-on: ubuntu-latest
     steps:
-#    - uses: actions/checkout@v1.0
-#      name: Check out code
+    - uses: actions/checkout@v1.0
+      name: Check out code
 
     - uses: mr-smithers-excellent/docker-build-push@v3
       name: Build & push Docker image
@@ -21,6 +21,6 @@ jobs:
         image: ${{ secrets.DOCKERHUB_USERNAME }}/myapp1
         tags: v1, latest
         registry: docker.io
-#        dockerfile: Dockerfile
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
