@@ -3,4 +3,4 @@ FROM nginx:latest
 #WORKDIR /usr/share/nginx/html
 #RUN echo "build image finish"
 #CMD echo "container running"
-COPY fluke.html /usr/share/nginx/html/index.heml
+COPY fluke.html /usr/share/nginx/html/index.html
