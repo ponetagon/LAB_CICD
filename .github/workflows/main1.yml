@@ -19,8 +19,8 @@ jobs:
       name: Build & push Docker image
       with:
         image: ${{ secrets.DOCKERHUB_USERNAME }}/myapp1
-#        tags: v1, latest
-        registry: harborkubelab.dedyn.io
-        dockerfile: Dockerfile
-        username: admin
-        password: 1Con@inetcloud
+        tags: v1, latest
+        registry: docker.io
+#        dockerfile: Dockerfile
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
