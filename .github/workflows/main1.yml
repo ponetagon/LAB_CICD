@@ -18,7 +18,7 @@ jobs:
     - uses: mr-smithers-excellent/docker-build-push@v3
       name: Build & push Docker image
       with:
-        image: ${{ secrets.DOCKERHUB_USERNAME }}:myapp1
+        image: ${{ secrets.DOCKERHUB_USERNAME }}/myapp1
 #        tags: v1, latest
         registry: harborkubelab.dedyn.io
         dockerfile: Dockerfile
