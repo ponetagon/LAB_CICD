@@ -23,6 +23,6 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         context: .
-        file: ./Dockerfile
+#        file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/myapp1:latest , ${{ secrets.DOCKERHUB_USERNAME }}/myapp1:1.0.0
