@@ -21,6 +21,6 @@ jobs:
         image: ${{ secrets.DOCKERHUB_USERNAME }}:myapp1
 #        tags: v1, latest
         registry: harborkubelab.dedyn.io
-#        dockerfile: Dockerfile
+        dockerfile: Dockerfile
         username: admin
         password: 1Con@inetcloud
