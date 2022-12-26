@@ -8,15 +8,15 @@ on:
 
 jobs:
   Deploy:
-  environment: Kubernetes
-  runs-on: ubuntu-latest
-    steps:
+   environment: Kubernetes
+   runs-on: ubuntu-latest
+   steps:
     - uses: actions/checkout@v2
       name: Check out code
     
     - name: Trigger deploy
-        uses: Consensys/kubernetes-action@master
-        env:
+      uses: Consensys/kubernetes-action@master
+      env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        with:
+      with:
           args: apply nginx.yaml
