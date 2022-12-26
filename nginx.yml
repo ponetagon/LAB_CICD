@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: ponetagon/myapp1
+        image: ponetagon/myapp1:main-9d02c17
         ports:
         - containerPort: 80
 #      imagePullSecrets:
