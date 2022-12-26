@@ -23,11 +23,11 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: registry-fluke.ols-cicd.dedyn.io/root/cicd101/nginx-fluke:v2
+        image: ponetagon/myapp1
         ports:
         - containerPort: 80
-      imagePullSecrets:
-      - name: registry
+#      imagePullSecrets:
+#      - name: registry
 ---
 apiVersion: v1
 kind: Service
